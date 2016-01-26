@@ -6,22 +6,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.sogesispa.dev.ws.edp.models.UserModel;
-import it.sogesispa.dev.ws.edp.repositories.UserRepository;
+import it.sogesispa.dev.ws.edp.models.UtentiModel;
+import it.sogesispa.dev.ws.edp.repositories.UtentiRepository;
 
 @RestController
-public class UserController 
+public class UtentiController 
 
 {
 	@Autowired
-	private UserRepository userRepository;
+	private UtentiRepository userRepository;
 	
-	private UserModel user;
+	private UtentiModel user;
 	
 	@RequestMapping(value="/user", method=RequestMethod.GET)
-	public UserModel getUsers ()
+	public UtentiModel getUsers ()
 	{
-		user = new UserModel(0, null);
+		user = new UtentiModel(0, null);
 		user.setUser(userRepository.findAll());
 		user.setCount(userRepository.count());
 		//user.setCount(100);
@@ -30,9 +30,9 @@ public class UserController
 	}
 	
 	@RequestMapping(value="/user/{ip}", method=RequestMethod.GET)
-	public UserModel getUsersByIp (@PathVariable("ip") String ip)
+	public UtentiModel getUsersByIp (@PathVariable("ip") String ip)
 	{
-		user = new UserModel(0, null);
+		user = new UtentiModel(0, null);
 		user.setUser(userRepository.getByIp(ip));
 		user.setCount(userRepository.countByIp(ip));
 		

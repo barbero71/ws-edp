@@ -1,13 +1,13 @@
 package it.sogesispa.dev.ws.edp.models;
 
-import it.sogesispa.dev.ws.edp.entities.User;
+import it.sogesispa.dev.ws.edp.entities.Utenti;
 
-public class UserModel 
+public class UtentiModel 
 {
 	private long count;
-	private Iterable<User> user;
+	private Iterable<Utenti> user;
 	
-	public UserModel(long count, Iterable<User> user)
+	public UtentiModel(long count, Iterable<Utenti> user)
 	{
 		this.count = count;
 		this.user = user;
@@ -19,10 +19,10 @@ public class UserModel
 	public void setCount(long l) {
 		count = l;
 	}
-	public Iterable<User> getUser() {
+	public Iterable<Utenti> getUser() {
 		return user;
 	}
-	public void setUser(Iterable<User> user) {
+	public void setUser(Iterable<Utenti> user) {
 		this.user = user;
 	}
 	

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "JSN_UTENTI")
-public class User //implements java.io.Serializable
+public class Utenti
 {
 	@Id
 	@Column(name="JUSER_LOGIN")
