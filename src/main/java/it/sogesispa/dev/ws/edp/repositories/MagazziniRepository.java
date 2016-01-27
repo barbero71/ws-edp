@@ -17,6 +17,6 @@ public interface MagazziniRepository extends JpaRepository<Magazzini, Long>
 	@Query("select m from Magazzini m where TRIM(m.ip) = ?1")
 	public List<Magazzini> getByIp(String ip);
 	
-	@Query("select count (m) from Reparti m where TRIM(m.ip) = ?1")
+	@Query("select count (m) from Magazzini m where TRIM(m.ip) = ?1")
 	public int countByIp(String ip);
 }

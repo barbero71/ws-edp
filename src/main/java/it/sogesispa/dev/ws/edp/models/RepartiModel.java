@@ -5,12 +5,12 @@ import it.sogesispa.dev.ws.edp.entities.Reparti;
 public class RepartiModel 
 {	
 	private long count;
-	private Iterable<Reparti> rep;
+	private Iterable<Reparti> reparti;
 	
-	public RepartiModel(long count, Iterable<Reparti> rep)
+	public RepartiModel(long count, Iterable<Reparti> reparti)
 	{
 		this.count = count;
-		this.rep = rep;
+		this.reparti = reparti;
 	}
 
 	public long getCount() {
@@ -21,12 +21,12 @@ public class RepartiModel
 		this.count = count;
 	}
 
-	public Iterable<Reparti> getRep() {
-		return rep;
+	public Iterable<Reparti> getReparti() {
+		return reparti;
 	}
 
-	public void setRep(Iterable<Reparti> rep) {
-		this.rep = rep;
+	public void setRep(Iterable<Reparti> reparti) {
+		this.reparti = reparti;
 	}
 	
 	

@@ -5,12 +5,12 @@ import it.sogesispa.dev.ws.edp.entities.Magazzini;
 public class MagazziniModel 
 {
 	private long count;
-	private Iterable<Magazzini> mag;
+	private Iterable<Magazzini> magazzini;
 	
-	public MagazziniModel(long count, Iterable<Magazzini> mag)
+	public MagazziniModel(long count, Iterable<Magazzini> magazzini)
 	{
 		this.count = count;
-		this.mag = mag;
+		this.magazzini = magazzini;
 	}
 
 	public long getCount() {
@@ -21,12 +21,12 @@ public class MagazziniModel
 		this.count = count;
 	}
 
-	public Iterable<Magazzini> getMag() {
-		return mag;
+	public Iterable<Magazzini> getMagazzini() {
+		return magazzini;
 	}
 
-	public void setMag(Iterable<Magazzini> mag) {
-		this.mag = mag;
+	public void setMag(Iterable<Magazzini> magazzini) {
+		this.magazzini = magazzini;
 	}
 	
 }

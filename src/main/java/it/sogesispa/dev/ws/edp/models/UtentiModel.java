@@ -5,12 +5,12 @@ import it.sogesispa.dev.ws.edp.entities.Utenti;
 public class UtentiModel 
 {
 	private long count;
-	private Iterable<Utenti> user;
+	private Iterable<Utenti> utenti;
 	
-	public UtentiModel(long count, Iterable<Utenti> user)
+	public UtentiModel(long count, Iterable<Utenti> utenti)
 	{
 		this.count = count;
-		this.user = user;
+		this.utenti = utenti;
 	}
 	
 	public long getCount() {
@@ -19,11 +19,11 @@ public class UtentiModel
 	public void setCount(long l) {
 		count = l;
 	}
-	public Iterable<Utenti> getUser() {
-		return user;
+	public Iterable<Utenti> getUtenti() {
+		return utenti;
 	}
-	public void setUser(Iterable<Utenti> user) {
-		this.user = user;
+	public void setUser(Iterable<Utenti> utenti) {
+		this.utenti = utenti;
 	}
 	
 	

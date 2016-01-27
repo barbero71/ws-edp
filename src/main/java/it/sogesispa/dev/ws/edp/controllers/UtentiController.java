@@ -18,7 +18,7 @@ public class UtentiController
 	
 	private UtentiModel user;
 	
-	@RequestMapping(value="/user", method=RequestMethod.GET)
+	@RequestMapping(value="/utenti", method=RequestMethod.GET)
 	public UtentiModel getUsers ()
 	{
 		user = new UtentiModel(0, null);
@@ -29,7 +29,7 @@ public class UtentiController
 		return user;
 	}
 	
-	@RequestMapping(value="/user/{ip}", method=RequestMethod.GET)
+	@RequestMapping(value="/utenti/{ip}", method=RequestMethod.GET)
 	public UtentiModel getUsersByIp (@PathVariable("ip") String ip)
 	{
 		user = new UtentiModel(0, null);
