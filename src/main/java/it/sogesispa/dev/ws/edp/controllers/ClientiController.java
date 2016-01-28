@@ -18,7 +18,7 @@ public class ClientiController
 	private ClientiModel cli;
 	
 	@RequestMapping(value="/clienti", method=RequestMethod.GET)
-	public ClientiModel getCli ()
+	public ClientiModel getCli()
 	{
 		cli = new ClientiModel(0, null);
 		cli.setCli(cliRepository.findAll());
