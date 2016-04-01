@@ -60,6 +60,7 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:8.0.30" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: com.oracle:ojdbc7:12.1.0.1" />
+          <element id="library" level="project" name="Maven: org.scala-lang:scala-library:2.11.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

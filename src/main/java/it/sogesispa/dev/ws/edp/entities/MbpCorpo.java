@@ -22,6 +22,18 @@ public class MbpCorpo
 	private int mbpc_qta_pre;
 	@Column(name="MBPC_QTA_DIF")
 	private int mbpc_qta_dif;
+	
+	
+	
+	public MbpCorpo(int mbpc_btp_id, String mbpc_articolo, int mbpc_qta, int mbpc_qta_con, int mbpc_qta_pre,
+			int mbpc_qta_dif) {
+		this.mbpc_btp_id = mbpc_btp_id;
+		this.mbpc_articolo = mbpc_articolo;
+		this.mbpc_qta = mbpc_qta;
+		this.mbpc_qta_con = mbpc_qta_con;
+		this.mbpc_qta_pre = mbpc_qta_pre;
+		this.mbpc_qta_dif = mbpc_qta_dif;
+	}
 	public int getMbpc_btp_id() {
 		return mbpc_btp_id;
 	}
