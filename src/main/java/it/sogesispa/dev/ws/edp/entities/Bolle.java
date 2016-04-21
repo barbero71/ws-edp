@@ -5,10 +5,12 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="JSN_BOLLEP")
+@IdClass(BollePk.class)
 public class Bolle 
 {
 	@Id
@@ -118,6 +120,7 @@ public class Bolle
 	private String jbpc_caumov;
 	@Column(name="JTT_DESC_CAUMOV")
 	private String jtt_desc_caumov;
+	@Id
 	@Column(name="JBPC_ARTICOLO")
 	private String jbpc_articolo;
 	@Column(name="JART.DESC_ART")

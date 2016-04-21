@@ -1,12 +1,20 @@
 package it.sogesispa.dev.ws.edp.controllers;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import it.sogesispa.dev.ws.edp.entities.MbpCorpo;
+import it.sogesispa.dev.ws.edp.models.MbpCorpoModel;
+
 import it.sogesispa.dev.ws.edp.repositories.MbpCorpoRepository;
 
 @RestController
@@ -15,28 +23,48 @@ public class MbpCorpoController
 	@Autowired
 	private MbpCorpoRepository mbpCorpoRepository;
 	
-	private MbpCorpo mbpCorpo;
+	private MbpCorpoModel corpo;
 	
-	@RequestMapping(value="/corpo", method=RequestMethod.POST)
-	public String MbpCorpoModel(
-			@RequestParam(value="mbpc_btp_id", defaultValue="0") int mbpc_btp_id,
-			@RequestParam(value="mbpc_articolo") String mbpc_articolo,
-			@RequestParam(value="mbpc_qta") int mbpc_qta,
-			@RequestParam(value="mbpc_qta_con") int mbpc_qta_con,
-			@RequestParam(value="mbpc_qta_pre") int mbpc_qta_pre,
-			@RequestParam(value="mbpc_qta_dif") int mbpc_qta_dif
+	
+	@RequestMapping(value="/corpo", method=RequestMethod.POST, consumes="application/json", headers="content-type=application/x-www-form-urlencoded")
+	public String MbpCorpoBolle(
+			@RequestParam("bolle") String jsonString
 			)
 	{
-		try
-		{
-			mbpCorpo = new MbpCorpo(mbpc_btp_id,mbpc_articolo,mbpc_qta,mbpc_qta_con,mbpc_qta_pre,mbpc_qta_dif);
-			this.mbpCorpoRepository.save(mbpCorpo);
-		}
-		catch (Exception e)
-		{
-			System.out.println(e);
+		ObjectMapper mapper = new ObjectMapper();
+		MbpCorpo[] mbp = null;
+		try {
+			 mbp = mapper.readValue(jsonString, MbpCorpo[].class);
+		} catch (JsonParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (JsonMappingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		
+		//Transaction trns = null;
+		//trns.begin();
+		try
+		{
+			int i = 0;
+			for (i=0; i< mbp.length; i++)
+			{
+				corpo = new MbpCorpoModel(null);
+				corpo.setCorpo(mbpCorpoRepository.save(mbp[i]));
+			}
+			//trns.commit();
+		}
+		catch(Exception e)
+		{
+			//trns.rollback();
+			System.out.println("Errore nel salvataggio!");
+			System.out.println(e);
+		}
+		System.out.println("SALVATAGGIO OK!!!!");
 		return "Salvataggio OK";
 	}
 	

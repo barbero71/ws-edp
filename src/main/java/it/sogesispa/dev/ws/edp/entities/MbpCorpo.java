@@ -3,15 +3,18 @@ package it.sogesispa.dev.ws.edp.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="MBP_CORPO")
-public class MbpCorpo 
+@IdClass(MbpCorpoPk.class)
+public class MbpCorpo
 {
 	@Id
 	@Column(name="MBPC_BPT_ID")
-	private int mbpc_btp_id;
+	private int mbpc_bpt_id;
+	@Id
 	@Column(name="MBPC_ARTICOLO")
 	private String mbpc_articolo;
 	@Column(name="MBPC_QTA")
@@ -22,23 +25,35 @@ public class MbpCorpo
 	private int mbpc_qta_pre;
 	@Column(name="MBPC_QTA_DIF")
 	private int mbpc_qta_dif;
+	@Column(name="MBPC_STATO")
+	private int mbpc_stato;
 	
+	public MbpCorpo()
+	{
+		
+	}
 	
-	
-	public MbpCorpo(int mbpc_btp_id, String mbpc_articolo, int mbpc_qta, int mbpc_qta_con, int mbpc_qta_pre,
-			int mbpc_qta_dif) {
-		this.mbpc_btp_id = mbpc_btp_id;
+	public MbpCorpo(int mbpc_bpt_id, String mbpc_articolo, int mbpc_qta, int mbpc_qta_con, int mbpc_qta_pre,
+			int mbpc_qta_dif, int mbpc_stato) {
+		this.mbpc_bpt_id = mbpc_bpt_id;
 		this.mbpc_articolo = mbpc_articolo;
 		this.mbpc_qta = mbpc_qta;
 		this.mbpc_qta_con = mbpc_qta_con;
 		this.mbpc_qta_pre = mbpc_qta_pre;
 		this.mbpc_qta_dif = mbpc_qta_dif;
+		this.mbpc_stato = mbpc_stato;
+	}
+	public int getMbpc_stato() {
+		return mbpc_stato;
+	}
+	public void setMbpc_stato(int mbpc_stato) {
+		this.mbpc_stato = mbpc_stato;
 	}
 	public int getMbpc_btp_id() {
-		return mbpc_btp_id;
+		return mbpc_bpt_id;
 	}
-	public void setMbpc_btp_id(int mbpc_btp_id) {
-		this.mbpc_btp_id = mbpc_btp_id;
+	public void setMbpc_bpt_id(int mbpc_bpt_id) {
+		this.mbpc_bpt_id = mbpc_bpt_id;
 	}
 	public String getMbpc_articolo() {
 		return mbpc_articolo;
@@ -70,6 +85,4 @@ public class MbpCorpo
 	public void setMbpc_qta_dif(int mbpc_qta_dif) {
 		this.mbpc_qta_dif = mbpc_qta_dif;
 	}
-		
-	
 }
