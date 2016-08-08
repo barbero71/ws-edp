@@ -27,6 +27,8 @@ public class MbpCorpo
 	private int mbpc_qta_dif;
 	@Column(name="MBPC_STATO")
 	private int mbpc_stato;
+	@Column(name="MBPC_IP")
+	private String mbpc_ip;
 	
 	public MbpCorpo()
 	{
@@ -34,7 +36,7 @@ public class MbpCorpo
 	}
 	
 	public MbpCorpo(int mbpc_bpt_id, String mbpc_articolo, int mbpc_qta, int mbpc_qta_con, int mbpc_qta_pre,
-			int mbpc_qta_dif, int mbpc_stato) {
+			int mbpc_qta_dif, int mbpc_stato, String mbpc_ip) {
 		this.mbpc_bpt_id = mbpc_bpt_id;
 		this.mbpc_articolo = mbpc_articolo;
 		this.mbpc_qta = mbpc_qta;
@@ -42,6 +44,7 @@ public class MbpCorpo
 		this.mbpc_qta_pre = mbpc_qta_pre;
 		this.mbpc_qta_dif = mbpc_qta_dif;
 		this.mbpc_stato = mbpc_stato;
+		this.mbpc_ip = mbpc_ip;
 	}
 	public int getMbpc_stato() {
 		return mbpc_stato;
@@ -49,9 +52,10 @@ public class MbpCorpo
 	public void setMbpc_stato(int mbpc_stato) {
 		this.mbpc_stato = mbpc_stato;
 	}
-	public int getMbpc_btp_id() {
+	public int getMbpc_bpt_id() {
 		return mbpc_bpt_id;
 	}
+	
 	public void setMbpc_bpt_id(int mbpc_bpt_id) {
 		this.mbpc_bpt_id = mbpc_bpt_id;
 	}
@@ -85,4 +89,11 @@ public class MbpCorpo
 	public void setMbpc_qta_dif(int mbpc_qta_dif) {
 		this.mbpc_qta_dif = mbpc_qta_dif;
 	}
+	public String getMbpc_ip() {
+		return mbpc_ip;
+	}
+	public void setMbpc_ip(String mbpc_ip) {
+		this.mbpc_ip = mbpc_ip;
+	}
+	
 }
