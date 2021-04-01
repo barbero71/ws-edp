@@ -46,11 +46,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>12.1.0.1</version>
-        </dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+      <scope>runtime</scope>
+      <version>12.2.0.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.scala-lang</groupId>
